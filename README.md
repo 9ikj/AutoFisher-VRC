@@ -21,3 +21,20 @@
 休息时间：上一轮钓鱼到下一轮钓鱼的间隔
 
 超时重钓：超过多少分钟没上鱼则重新进行钓鱼
+
+## 开发说明
+
+### 自动构建与发布
+
+本项目使用GitHub Actions自动构建Windows可执行文件：
+
+- 当代码推送到main或master分支时，会自动触发构建
+- 构建使用Nuitka将Python代码打包为独立的Windows可执行文件
+- 构建完成后会自动创建GitHub Release，并上传exe文件和包含所有依赖的zip文件
+
+如果您想要手动构建，可以使用以下命令：
+
+```bash
+pip install nuitka python-osc watchdog
+python -m nuitka --standalone --windows-disable-console --follow-imports AutoFisher.py
+```
