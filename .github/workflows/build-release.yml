@@ -25,8 +25,10 @@ jobs:
         with:
           nuitka-version: main
           script-name: AutoFisher.py
-          mode: standalone
+          mode: onefile
           enable-plugin: tk-inter
+          include-package: pythonosc
+          disable-console: true
 
       # Uploads artifact
       - name: Upload Artifact
