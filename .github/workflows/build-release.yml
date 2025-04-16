@@ -33,5 +33,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: exe
-          path: build/AutoFisher.exe
+          path: build/AutoFisher.dist/AutoFisher.exe
           include-hidden-files: true
